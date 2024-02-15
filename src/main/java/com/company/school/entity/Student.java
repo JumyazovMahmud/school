@@ -1,4 +1,4 @@
-package com.company.school.modul;
+package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
