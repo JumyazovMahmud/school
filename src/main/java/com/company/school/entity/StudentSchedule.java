@@ -14,8 +14,8 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "schedulestudent")
-public class ScheduleStudent {
+@Table(name = "schedule_student")
+public class StudentSchedule {
 
     @Id
     @Column(name = "schedule_student_id")
