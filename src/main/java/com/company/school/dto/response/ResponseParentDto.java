@@ -23,7 +23,7 @@ public class ResponseParentDto {
     private String firstname;
     private String lastname;
 
-    private String studentId;
+    private Integer studentId;
     private Integer teacherId;
     private boolean active;
 

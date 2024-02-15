@@ -26,7 +26,7 @@ public class Parent {
     private String firstname;
     private String lastname;
 
-    private String studentId;
+    private In studentId;
     private Integer teacherId;
     private boolean active;
 

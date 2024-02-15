@@ -19,7 +19,7 @@ public class RequestParentDto {
     private String firstname;
     @NotNull(message = "Parent Lastname  cannot be null or empty!")
     private String lastname;
-    private String studentId;
+    private Integer studentId;
     private Integer teacherId;
     private boolean active;
 
