@@ -1,6 +1,10 @@
 package com.company.school.dto.request;
 
-import jakarta.validation.constraints.*;
+import com.company.school.entity.Student;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -39,8 +43,6 @@ public class RequestStudentDto {
     @Min(value = 6 , message = "Age cannot be lower than 6")
     private int age;
 
-    @NotBlank(message = "Gender cannot be null or empty")
-    private String gender;
 
 
     private LocalDate birthDate;
@@ -55,5 +57,7 @@ public class RequestStudentDto {
 
     @NotNull(message = "Marks id cannot be null or empty")
     private Integer marksId;
+    private Student.Status status;
+    private Student.Gender gender;
     private boolean attended;
 }

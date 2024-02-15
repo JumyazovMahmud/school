@@ -2,8 +2,6 @@ package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -18,7 +16,7 @@ import java.time.LocalDateTime;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer studentId;
+    private Integer id;
     private String firstname;
     private String lastname;
     private String middleName;
@@ -28,7 +26,6 @@ public class Student {
     private String parentsPhoneNumber;
     private String address;
     private int age;
-    private String gender;
     private LocalDate birthDate;
 
     private Integer subjectId;
@@ -37,11 +34,25 @@ public class Student {
     private Integer marksId;
     private boolean attended;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @UpdateTimestamp
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+
+    private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
+    public enum Status {
+        ACTIVE,
+        INACTIVE
+    }
+
+    public enum Gender {
+        MALE,
+        FEMALE,
+        OTHER
+    }
 }

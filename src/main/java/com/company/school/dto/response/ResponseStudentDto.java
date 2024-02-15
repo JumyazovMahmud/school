@@ -1,5 +1,6 @@
 package com.company.school.dto.response;
 
+import com.company.school.entity.Student;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -21,7 +22,6 @@ public class ResponseStudentDto {
     private String parentsPhoneNumber;
     private String address;
     private int age;
-    private String gender;
     private LocalDate birthDate;
 
     private Integer subjectId;
@@ -29,6 +29,9 @@ public class ResponseStudentDto {
     private Integer classId;
     private Integer marksId;
     private boolean attended;
+
+    private Student.Status status;
+    private Student.Gender gender;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
