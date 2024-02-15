@@ -19,13 +19,13 @@ public class Student {
     private Integer id;
     private String firstname;
     private String lastname;
+    private String middleName;
     private String email;
     private String password;
     private String phoneNumber;
     private String parentsPhoneNumber;
     private String address;
     private int age;
-    private String gender;
     private LocalDate birthDate;
 
     private Integer subjectId;
@@ -34,8 +34,25 @@ public class Student {
     private Integer marksId;
     private boolean attended;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
+    public enum Status {
+        ACTIVE,
+        INACTIVE
+    }
+
+    public enum Gender {
+        MALE,
+        FEMALE,
+        OTHER
+    }
 }
