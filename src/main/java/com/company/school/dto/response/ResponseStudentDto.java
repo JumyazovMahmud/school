@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class StudentResponseDto {
+public class ResponseStudentDto {
     private Integer id;
     private String firstname;
     private String lastname;
