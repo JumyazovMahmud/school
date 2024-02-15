@@ -15,19 +15,16 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "School")
-public class School {
+@Table(name = "Address")
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer schoolId;
-    private String nameOfBuilding;
-    private Integer numberOfSchool;
-    private String additionalInformation;
-    private boolean available;
-    private Integer imageId;
-    private Integer customerId;
-    private Integer addressId;
-    private Integer teacherId;
+    private Integer romsId;
+    private String addressNumber;
+    private String zimCode;
+    private String street;
+    private String district;
+    private String city;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

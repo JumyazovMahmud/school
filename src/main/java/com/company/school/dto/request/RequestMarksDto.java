@@ -1,30 +1,27 @@
-package com.company.school.entity;
+package com.company.school.dto.request;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.*;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Marks")
-public class Marks {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RequestMarksDto {
+
+    @NotNull(message = "Marks Id cannot be null or empty!")
     private Integer marksId;
+    @NotNull(message = "Student Id cannot be null or empty!")
     private Integer studentId;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 
 }
