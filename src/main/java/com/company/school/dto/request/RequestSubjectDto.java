@@ -12,14 +12,14 @@ import lombok.*;
 @Builder
 public class RequestSubjectDto {
 
-    @NotBlank
+    @NotBlank(message = "SubjectName cannot be null or empty")
     private String subjectName;
 
-    @NotNull
+    @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
 
 
-    @NotBlank
+    @NotBlank(message = "Floor cannot be null")
     private String floor;
 
 }

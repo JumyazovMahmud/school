@@ -11,9 +11,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class ResponseStudentDto {
-    private Integer id;
+    private Integer studentId;
     private String firstname;
     private String lastname;
+    private String middleName;
     private String email;
     private String password;
     private String phoneNumber;

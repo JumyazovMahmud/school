@@ -21,10 +21,10 @@ public class RequestParentDto {
     @NotBlank(message = "Lastname cannot be null or empty!")
     private String lastname;
 
-    @NotNull
+    @NotNull(message = "Student id cannot be null")
     private Integer studentId;
 
-    @NotNull
+    @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
     private boolean active;
 

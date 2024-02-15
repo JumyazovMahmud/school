@@ -10,16 +10,16 @@ import lombok.*;
 @AllArgsConstructor
 public class RequestClassDto {
 
-    @NotNull
+    @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
 
-    @NotNull
+    @NotNull(message = "Student id cannot be null")
     private Integer studentId;
 
-    @NotNull
+    @NotNull(message = "Mentor id cannot be null")
     private Integer mentorId;
 
-    @NotNull
+    @NotNull(message = "Room id cannot be null")
     private Integer roomId;
 
 

@@ -11,9 +11,9 @@ import lombok.*;
 public class RequestTeacherScheduleDto {
 
 
-    @NotNull
+    @NotNull(message = "Class id cannot be null")
     private Integer classId;
 
-    @NotNull
+    @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
 }

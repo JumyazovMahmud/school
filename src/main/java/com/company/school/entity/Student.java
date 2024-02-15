@@ -2,6 +2,8 @@ package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,9 +18,10 @@ import java.time.LocalDateTime;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer studentId;
     private String firstname;
     private String lastname;
+    private String middleName;
     private String email;
     private String password;
     private String phoneNumber;
@@ -34,7 +37,10 @@ public class Student {
     private Integer marksId;
     private boolean attended;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
