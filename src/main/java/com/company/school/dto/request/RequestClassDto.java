@@ -1,5 +1,6 @@
 package com.company.school.dto.request;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -9,12 +10,20 @@ import lombok.*;
 @AllArgsConstructor
 public class RequestClassDto {
 
-    private Integer id;
+    @NotNull
     private Integer teacherId;
+
+    @NotNull
     private Integer studentId;
+
+    @NotNull
     private Integer mentorId;
+
+    @NotNull
     private Integer roomId;
-    private Boolean status;
+
+
+    private boolean status;
 
 
 }

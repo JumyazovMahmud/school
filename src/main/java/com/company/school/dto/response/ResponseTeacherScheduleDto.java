@@ -23,10 +23,10 @@ public class ResponseTeacherScheduleDto {
 
     private List<ResponseScheduleDto> scheduleList;
 
-    @CreationTimestamp
+
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
+
     private LocalDateTime updatedAt;
 
 

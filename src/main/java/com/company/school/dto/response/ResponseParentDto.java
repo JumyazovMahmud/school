@@ -27,9 +27,10 @@ public class ResponseParentDto {
     private Integer teacherId;
     private boolean active;
 
-    @CreationTimestamp
+
     private LocalDateTime createdAt;
-    @UpdateTimestamp
+
     private LocalDateTime updatedAt;
+
     private LocalDateTime deletedAt;
 }

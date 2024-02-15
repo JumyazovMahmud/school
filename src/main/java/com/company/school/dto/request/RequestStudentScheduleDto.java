@@ -3,17 +3,19 @@ package com.company.school.dto.request;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Builder
-public class RequestTeacherScheduleDto {
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class RequestStudentScheduleDto {
 
     @NotNull
     private Integer classId;
 
     @NotNull
-    private Integer teacherId;
+    private Integer studentId;
+
+
+
 }

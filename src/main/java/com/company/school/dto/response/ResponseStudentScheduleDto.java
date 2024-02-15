@@ -1,9 +1,11 @@
 package com.company.school.dto.response;
 
+import com.company.school.entity.Schedule;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -12,10 +14,10 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResponseScheduleStudentDto {
+public class ResponseStudentScheduleDto {
 
-    private Integer id;
-    private Map<Integer, String> lessons;
+    private Integer scheduleStudentId;
+    private List<Schedule> lessons;
     private Integer classId;
     private Integer studentId;
 
