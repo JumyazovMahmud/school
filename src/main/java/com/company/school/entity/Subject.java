@@ -1,4 +1,4 @@
-package com.company.school.enitity;
+package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,20 +13,25 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Entity
-@Table(name = "schedule")
-public class Schedule {
-
+@Table(name = "subject")
+public class Subject {
+    @Basic
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer scheduleId;
+    private Integer subjectId;
 
-    private Integer hours;
+    @Basic
+    private String subjectName;
 
-    private String subject;
-
-    private Integer studentId;
-
+    @Basic
     private Integer teacherId;
+
+
+    @Basic
+    private String floor;
+
+    @Basic
+    private boolean active;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

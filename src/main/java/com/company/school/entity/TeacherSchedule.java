@@ -1,4 +1,4 @@
-package com.company.school.enitity;
+package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,9 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Getter
 @Setter
