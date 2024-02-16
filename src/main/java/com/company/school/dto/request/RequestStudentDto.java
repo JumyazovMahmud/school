@@ -57,7 +57,12 @@ public class RequestStudentDto {
 
     @NotNull(message = "Marks id cannot be null or empty")
     private Integer marksId;
+
+    @NotNull(message = "Status cannot be null")
     private Student.Status status;
+
+    @NotNull(message = "Gender cannot be null")
     private Student.Gender gender;
+
     private boolean attended;
 }
