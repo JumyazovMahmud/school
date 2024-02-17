@@ -1,42 +1,36 @@
 package com.company.school.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "rooms")
 @Entity
-public class Rooms {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "attendance")
+public class Attendance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roomsId;
-
-    private int roomNumber;
-
-    private String roomName;
-
-    private String floor;
-
-    private boolean active;
-
-    private LocalDateTime time;
-
-    private String subject;
+    private Integer attendanceId;
+    private String clazz;
+    private Integer absent;
+    private LocalDateTime data;
+    private Integer teacherId;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
     private LocalDateTime deletedAt;
+
 }
+

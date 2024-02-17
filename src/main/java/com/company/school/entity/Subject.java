@@ -1,10 +1,7 @@
 package com.company.school.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,31 +9,36 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@Builder
 @Setter
-@Table(name = "rooms")
+@Getter
 @Entity
-public class Rooms {
-
+@Table(name = "subject")
+public class Subject {
+    @Basic
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roomsId;
+    private Integer subjectId;
 
-    private int roomNumber;
+    @Basic
+    private String subjectName;
 
-    private String roomName;
+    @Basic
+    private Integer teacherId;
 
+
+    @Basic
     private String floor;
 
+    @Basic
     private boolean active;
-
-    private LocalDateTime time;
-
-    private String subject;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+
     private LocalDateTime deletedAt;
 }

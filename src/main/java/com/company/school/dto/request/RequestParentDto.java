@@ -1,5 +1,6 @@
 package com.company.school.dto.request;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,13 +14,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestParentDto {
-    @NotNull(message = "Parent id cannot be null or empty!")
+    @NotBlank(message = "Parent id cannot be null or empty!")
     private Integer parentId;
-    @NotNull(message = "Parent Firstname  cannot be null or empty!")
+    @NotBlank(message = "Firstname cannot be null or empty!")
     private String firstname;
-    @NotNull(message = "Parent Lastname  cannot be null or empty!")
+    @NotBlank(message = "Lastname cannot be null or empty!")
     private String lastname;
+
+    @NotNull(message = "Student id cannot be null")
     private Integer studentId;
+
+    @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
     private boolean active;
 

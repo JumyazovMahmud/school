@@ -1,32 +1,34 @@
 package com.company.school.dto.response;
 
-
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Builder
-public class ResponseAddressDto {
-    private Integer addressId;
-    private String addressNumber;
 
-    private String zipCode;
+public class ResponseTeacherScheduleDto {
 
-    private String street;
+    private Integer teacherScheduleId;
 
-    private String district;
+    private Integer classId;
 
-    private String city;
+    private Integer teacherId;
+
+    private List<ResponseScheduleDto> scheduleList;
 
 
     private LocalDateTime createdAt;
 
+
     private LocalDateTime updatedAt;
+
+
     private LocalDateTime deletedAt;
 }

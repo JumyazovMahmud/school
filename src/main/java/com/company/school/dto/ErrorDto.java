@@ -4,9 +4,11 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ErrorDto {
-    String field;
-    String message;
+    private String field;
+
+    private String message;
 }

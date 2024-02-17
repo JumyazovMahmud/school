@@ -1,33 +1,33 @@
 package com.company.school.dto.request;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class RequestRoomsDto {
-    @NotNull(message = "Rooms Id cannot be null or empty!")
-    private Integer roomsId;
-    @NotNull(message = "Rooms Number cannot be null or empty!")
-    private Integer roomsNumber;
-    @NotBlank(message = "Rooms Number cannot be null or empty!")
-    private String roomsName;
-    @NotNull(message = "Floor cannot be null or empty!")
-    private Integer floor;
-    @NotNull(message = "Active cannot be null or empty!")
+    @Min(value = 1 , message = "Room number cannot be lower than 0")
+    private int roomNumber;
+
+    @NotBlank(message = "Room name cannot be null or empty")
+    private String roomName;
+
+    @NotBlank(message = "Floor cannot be null or empty")
+    private String floor;
+
     private boolean active;
-    //    private  time;
-//    private subject
+
+    @NotNull(message = "Time cannot be null")
+    private LocalDateTime time;
+
+    @NotBlank(message = "Subject cannot be null or empty")
+    private String subject;
 }
