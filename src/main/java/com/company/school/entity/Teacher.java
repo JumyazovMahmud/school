@@ -24,13 +24,18 @@ public class Teacher {
     private String email;
     private String password;
 
-//    private Address address;
+    private String addressId;
+
+    @OneToOne(mappedBy = "addressId" , fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    private Address address;
 
     private String phoneNumber;
     private Boolean active;
 
     @OneToMany(mappedBy = "id")
     private List<TeacherRole> roles;
+
+
     private Integer schoolId;
 
     private LocalDateTime createdAt;
