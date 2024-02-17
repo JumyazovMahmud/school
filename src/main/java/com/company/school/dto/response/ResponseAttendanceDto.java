@@ -17,4 +17,9 @@ public class ResponseAttendanceDto {
     private Integer absent;
     private LocalDateTime data;
     private Integer teacherId;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+
 }

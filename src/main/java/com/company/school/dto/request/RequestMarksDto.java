@@ -18,8 +18,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class RequestMarksDto {
 
-    @NotNull(message = "Marks Id cannot be null or empty!")
-    private Integer marksId;
     @NotNull(message = "Student Id cannot be null or empty!")
     private Integer studentId;
 

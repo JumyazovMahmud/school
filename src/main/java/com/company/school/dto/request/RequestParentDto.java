@@ -14,8 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestParentDto {
-    @NotBlank(message = "Parent id cannot be null or empty!")
-    private Integer parentId;
+
     @NotBlank(message = "Firstname cannot be null or empty!")
     private String firstname;
     @NotBlank(message = "Lastname cannot be null or empty!")
@@ -26,6 +25,7 @@ public class RequestParentDto {
 
     @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
+
     private boolean active;
 
 }
