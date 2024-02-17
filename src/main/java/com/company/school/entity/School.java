@@ -1,14 +1,12 @@
 package com.company.school.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,10 +22,23 @@ public class School {
     private Integer numberOfSchool;
     private String additionalInformation;
     private boolean available;
-    private Integer imageId;
-    private Integer customerId;
     private Integer addressId;
+    @Column(name = "teacher_id")
     private Integer teacherId;
+
+    @OneToMany( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_id" , referencedColumnName = "teacher_id" , insertable = false , updatable = false)
+    private List<Teacher> teachers;
+
+    @OneToOne( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id" , referencedColumnName = "address_id" , insertable = false , updatable = false)
+    private Address address;
+
+
+
+
+
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;

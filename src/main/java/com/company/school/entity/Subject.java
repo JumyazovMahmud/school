@@ -26,6 +26,8 @@ public class Subject {
     @Basic
     private Integer teacherId;
 
+    @Basic
+    private Integer studentId;
 
     @Basic
     private String floor;

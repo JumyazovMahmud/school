@@ -2,9 +2,11 @@ package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.repository.cdi.Eager;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -33,6 +35,9 @@ public class Student {
     private Integer classId;
     private Integer marksId;
     private boolean attended;
+
+    @OneToMany(mappedBy = "studentId" , fetch = FetchType.EAGER , cascade =  CascadeType.ALL)
+    private List<Subject> subject;
 
     @Enumerated(EnumType.STRING)
     private Status status;

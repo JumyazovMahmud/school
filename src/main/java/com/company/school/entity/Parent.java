@@ -30,6 +30,10 @@ public class Parent {
     private Integer teacherId;
     private boolean active;
 
+
+
+
+
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp

@@ -19,6 +19,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
     private Integer addressId;
 
     private String addressNumber;
@@ -29,7 +30,10 @@ public class Address {
 
     private String district;
 
+
+    private Integer schoolId;
     private String city;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import com.company.school.entity.Parent;
 
 
 @Getter
@@ -18,16 +19,26 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "teacher_id")
     private Integer id;
     private String firstname;
     private String lastname;
     private String email;
     private String password;
 
-    private String addressId;
+    @Column(name = "address_id")
+    private Integer addressId;
 
-    @OneToOne(mappedBy = "addressId" , fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @Column(name = "parent_id")
+    private Integer parentId;
+
+    @OneToOne
+    @JoinColumn(name = "address_id" , referencedColumnName = "address_id" , insertable = false , updatable = false)
     private Address address;
+
+//    @ManyToOne( fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+////    @JoinColumn(name = "parent_id" , referencedColumnName = "parent_id" , insertable = false , updatable = false)
+//    private List<Parent> parents;
 
     private String phoneNumber;
     private Boolean active;
@@ -36,7 +47,6 @@ public class Teacher {
     private List<TeacherRole> roles;
 
 
-    private Integer schoolId;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
