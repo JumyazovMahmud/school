@@ -18,7 +18,8 @@ import java.util.List;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "student_id")
+    private Integer studentId;
     private String firstname;
     private String lastname;
     private String middleName;

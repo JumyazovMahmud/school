@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 import com.company.school.entity.Parent;
 
 
@@ -33,19 +34,29 @@ public class Teacher {
     private Integer parentId;
 
     @OneToOne
-    @JoinColumn(name = "address_id" , referencedColumnName = "address_id" , insertable = false , updatable = false)
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id", insertable = false, updatable = false)
     private Address address;
 
-//    @ManyToOne( fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-////    @JoinColumn(name = "parent_id" , referencedColumnName = "parent_id" , insertable = false , updatable = false)
-//    private List<Parent> parents;
+    @OneToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
+    private Attendance attendance;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
+    private Subject subject;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
+    private TeacherSchedule teacherSchedule;
+
+
+
 
     private String phoneNumber;
     private Boolean active;
 
     @OneToMany(mappedBy = "id")
     private List<TeacherRole> roles;
-
 
 
     private LocalDateTime createdAt;

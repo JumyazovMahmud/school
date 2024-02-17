@@ -17,6 +17,7 @@ import java.util.List;
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "school_id")
     private Integer schoolId;
     private String nameOfBuilding;
     private Integer numberOfSchool;
@@ -37,7 +38,9 @@ public class School {
 
 
 
-
+    @OneToMany( fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "school_id", referencedColumnName = "school_id", insertable = false, updatable = false)
+    private List<Administration> administrations;
 
 
     @CreationTimestamp

@@ -22,6 +22,7 @@ public class Attendance {
     private String clazz;
     private Integer absent;
     private LocalDateTime data;
+    @Column(name = "teacher_id")
     private Integer teacherId;
 
     @CreationTimestamp

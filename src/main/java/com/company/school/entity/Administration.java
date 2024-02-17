@@ -17,7 +17,8 @@ public class Administration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer adminstrationId;
+
+    private Integer administrationId;
     private String firstname;
     private String lastname;
     private String email;
@@ -28,6 +29,7 @@ public class Administration {
     private String phoneNumber;
     private Boolean active;
 
+    @Column(name = "school_id")
     private Integer schoolId;
 
     private LocalDateTime createdAt;

@@ -34,7 +34,9 @@ public class TeacherSchedule {
     @OneToMany
     private List<Schedule> scheduleList;
 
+    @Column(name = "class_id")
     private Integer classId;
+    @Column(name = "teacher_id")
 
     private Integer teacherId;
 
