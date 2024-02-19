@@ -1,25 +1,19 @@
-package com.company.school.entity;
+package com.company.school.dto.response;
 
-import jakarta.persistence.*;
+import com.company.school.dto.request.RequestTeacherRoleDto;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 @Getter
 @Setter
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "teachers")
-public class Teacher {
+public class ResponseTeacherDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String firstname;
     private String lastname;
@@ -31,15 +25,11 @@ public class Teacher {
     private String phoneNumber;
     private Boolean active;
 
-    @OneToMany(mappedBy = "id")
-    private List<TeacherRole> roles;
+    private List<RequestTeacherRoleDto> roles;
 
     private Integer schoolId;
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
-
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 

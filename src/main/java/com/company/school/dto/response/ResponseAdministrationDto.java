@@ -1,46 +1,32 @@
-package com.company.school.entity;
+package com.company.school.dto.response;
 
-import jakarta.persistence.*;
+import com.company.school.entity.enums.AdminRole;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
-
 
 @Getter
 @Setter
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "teachers")
-public class Teacher {
+public class ResponseAdministrationDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String firstname;
     private String lastname;
     private String email;
     private String password;
 
-//    private Address address;
+    private AdminRole role;
 
     private String phoneNumber;
     private Boolean active;
 
-    @OneToMany(mappedBy = "id")
-    private List<TeacherRole> roles;
-
     private Integer schoolId;
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
-
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
-
 }
