@@ -29,7 +29,7 @@ public class StudentSchedule {
 //
 //    private Map<Integer, String> lessons;
 
-    @OneToMany
+    @OneToMany(mappedBy = "studentId" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     private Integer classId;

@@ -55,7 +55,7 @@ public class Teacher {
     private String phoneNumber;
     private Boolean active;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "id" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
     private List<TeacherRole> roles;
 
 

@@ -22,16 +22,9 @@ public class TeacherSchedule {
     private Integer teacherScheduleId;
 
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "order_item_mapping",
-//            joinColumns = {@JoinColumn(name = "order_id", referencedColumnName = "id")},
-//            inverseJoinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")})
-//    @MapKey(name = "itemName")
 
-//    @Transient
-//    private Map<Integer , Subject> lessons;
 
-    @OneToMany
+    @OneToMany(mappedBy = "teacherId" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     @Column(name = "class_id")

@@ -46,6 +46,9 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    private List<Marks> marks;
+
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
