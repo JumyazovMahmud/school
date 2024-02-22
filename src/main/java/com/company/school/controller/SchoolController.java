@@ -13,7 +13,7 @@ import static com.company.school.dto.SimpleResponseDto.convertStatusCodeByData;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "School")
+@RequestMapping(value = "school")
 public class SchoolController implements SimpleRequestCrud<Integer, RequestSchoolDto, ResponseSchoolDto> {
     private final SchoolService schoolService;
 

@@ -13,7 +13,7 @@ import static com.company.school.dto.SimpleResponseDto.convertStatusCodeByData;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "Address")
+@RequestMapping(value = "address")
 public class AddressController implements SimpleRequestCrud<Integer, RequestAddressDto, ResponseAddressDto> {
 
     private final AddressService addressService;
