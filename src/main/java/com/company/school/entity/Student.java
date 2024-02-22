@@ -61,7 +61,6 @@ public class Student {
 
     public enum Gender {
         MALE,
-        FEMALE,
-        OTHER
+        FEMALE
     }
 }

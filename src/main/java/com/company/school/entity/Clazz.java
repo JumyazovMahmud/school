@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "class")
-public class Class {
+@Table(name = "clazz")
+public class Clazz {
 
     @Id
     @Column(name = "class_id")
