@@ -1,6 +1,6 @@
 package com.company.school.entity;
 
-import com.company.school.entity.enums.AdminRole;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -8,35 +8,35 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "address")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Getter
 @Setter
-@Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "administration")
-public class Administration {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
+    private Integer addressId;
 
-    private Integer administrationId;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
+    private String addressNumber;
 
-    private AdminRole role;
+    private String zipCode;
 
-    private String phoneNumber;
-    private Boolean active;
+    private String street;
 
-    @Column(name = "school_id")
+    private String district;
+
+
     private Integer schoolId;
+    private String city;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.enums.AdminRole;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,30 +13,35 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "administration")
-public class Administration {
+@Table(name = "class")
+public class Class {
 
     @Id
+    @Column(name = "class_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer administrationId;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
+    private Integer classId;
 
-    private AdminRole role;
+    private Integer teacherId;
 
-    private String phoneNumber;
-    private Boolean active;
+    private Integer studentId;
 
-    @Column(name = "school_id")
-    private Integer schoolId;
+    private Integer roomId;
+
+    private Boolean status;
+
+    @OneToOne( cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @JoinColumn(name = "class_id",referencedColumnName = "class_id")
+    private TeacherSchedule teacherSchedule;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
     private LocalDateTime deletedAt;
+
+
 }
