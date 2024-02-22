@@ -23,6 +23,7 @@ public class Marks {
     private Integer marksId;
     private Integer studentId;
 
+    private String studentName;
 
     private  String mark;
 
