@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 public interface RoomsService {
 
 
-    ResponseDto<RequestRoomsDto> createEntity(Integer entity);
+    ResponseDto<ResponseRoomsDto> createEntity(RequestRoomsDto dto);
 
-    ResponseDto<RequestRoomsDto> getEntity(ResponseRoomsDto entityId);
+    ResponseDto<ResponseRoomsDto> getEntity(Integer entityId);
 
-    ResponseDto<RequestRoomsDto> updateEntity(ResponseRoomsDto entityId, Integer entity);
+    ResponseDto<ResponseRoomsDto> updateEntity(Integer entityId, RequestRoomsDto dto);
 
-    ResponseDto<RequestRoomsDto> deleteEntity(ResponseRoomsDto entityId);
+    ResponseDto<ResponseRoomsDto> deleteEntity(Integer entityId);
 }
