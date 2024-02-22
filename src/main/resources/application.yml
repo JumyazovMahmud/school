@@ -1,13 +1,32 @@
 spring:
   datasource:
+    url: jdbc:postgresql://localhost:5432/school_db
     username: school_user
     password: root
-    url: jdbc:postgresql://localhost:5432/school_db
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
 server:
   port: 8080
+
+springdoc:
+  api-docs.path: /api-docs
+
+
+
+
+
+#spring.data.redis.host=localhost
+#spring.data.redis.port=8091
+#
+#spring.jwt.key = asodasmasfiamfmasjfasmfiasfopasmdfafafasfasfasfd
+#
+#springdoc.swagger-ui.path=/swagger-ui.html
+#springdoc.swagger-ui.operationsSorter=method
+#springdoc.swagger-ui.tryItOutEnabled=true
+#springdoc.swagger-ui.filter=true
+#springdoc.swagger-ui.tagsSorter=alpha
+#springdoc.api-docs.enabled=true
