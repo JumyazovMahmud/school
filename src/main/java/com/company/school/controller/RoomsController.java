@@ -15,32 +15,32 @@ import static com.company.school.dto.SimpleResponseDto.convertStatusCodeByData;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "Rooms")
-public class RoomsController implements SimpleRequestCrud<ResponseRoomsDto, Integer, RequestRoomsDto> {
+public class RoomsController implements SimpleRequestCrud<Integer, RequestRoomsDto, ResponseRoomsDto> {
 
     private final RoomsService roomsService;
 
 
     @PostMapping
     @Override
-    public ResponseEntity<ResponseDto<RequestRoomsDto>> createEntity(Integer entity) {
-        return convertStatusCodeByData(this.roomsService.createEntity(entity));
+    public ResponseEntity<ResponseDto<ResponseRoomsDto>> createEntity(@RequestBody RequestRoomsDto dto) {
+        return convertStatusCodeByData(this.roomsService.createEntity(dto));
     }
 
     @GetMapping
     @Override
-    public ResponseEntity<ResponseDto<RequestRoomsDto>> getEntity(ResponseRoomsDto entityId) {
+    public ResponseEntity<ResponseDto<ResponseRoomsDto>> getEntity(@RequestParam(value = "id") Integer entityId) {
         return convertStatusCodeByData(this.roomsService.getEntity(entityId));
     }
 
     @PutMapping
     @Override
-    public ResponseEntity<ResponseDto<RequestRoomsDto>> updateEntity(ResponseRoomsDto entityId, Integer entity) {
-        return convertStatusCodeByData(this.roomsService.updateEntity(entityId, entity));
+    public ResponseEntity<ResponseDto<ResponseRoomsDto>> updateEntity(@RequestParam(value = "id") Integer entityId, @RequestBody RequestRoomsDto dto) {
+        return convertStatusCodeByData(this.roomsService.updateEntity(entityId, dto));
     }
 
     @DeleteMapping
     @Override
-    public ResponseEntity<ResponseDto<RequestRoomsDto>> deleteEntity(ResponseRoomsDto entityId) {
+    public ResponseEntity<ResponseDto<ResponseRoomsDto>> deleteEntity(@RequestBody Integer entityId) {
         return convertStatusCodeByData(this.roomsService.deleteEntity(entityId));
     }
 }
