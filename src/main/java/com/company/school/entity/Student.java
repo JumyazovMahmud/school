@@ -2,9 +2,11 @@ package com.company.school.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.repository.cdi.Eager;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +18,8 @@ import java.time.LocalDateTime;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "student_id")
+    private Integer studentId;
     private String firstname;
     private String lastname;
     private String middleName;
@@ -34,11 +37,17 @@ public class Student {
     private Integer marksId;
     private boolean attended;
 
+    @OneToMany(mappedBy = "studentId" , fetch = FetchType.EAGER , cascade =  CascadeType.ALL)
+    private List<Subject> subject;
+
     @Enumerated(EnumType.STRING)
     private Status status;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    private List<Marks> marks;
 
 
     private LocalDateTime createdAt;

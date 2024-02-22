@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -15,11 +16,22 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Marks")
+@Entity
 public class Marks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer marksId;
     private Integer studentId;
+
+
+    private  String mark;
+
+    private String subjectName;
+
+//    private List<String> mark; // index 0 mark = index 0 student
+//
+//    @OneToOne(mappedBy = "studentId" , fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+//    private List<Student> students;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

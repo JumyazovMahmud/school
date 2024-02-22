@@ -5,9 +5,9 @@ spring:
     password: root
     driver-class-name: org.postgresql.Driver
   jpa:
-    show-sql: false
+    show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
 server:
   port: 8080

@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-
 public class ResponseTeacherScheduleDto {
 
     private Integer teacherScheduleId;

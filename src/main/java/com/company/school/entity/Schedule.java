@@ -22,11 +22,16 @@ public class Schedule {
 
     private Integer hours;
 
-    private String subject;
+    private String subjectName;
 
     private Integer studentId;
 
+    @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
+//
+//    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+//    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
+//    private Subject subject;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

@@ -30,6 +30,10 @@ public class Class {
 
     private Boolean status;
 
+    @OneToOne( cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @JoinColumn(name = "class_id",referencedColumnName = "class_id")
+    private TeacherSchedule teacherSchedule;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;

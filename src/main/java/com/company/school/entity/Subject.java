@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.time.LocalDateTime;
 
@@ -14,24 +15,27 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @Table(name = "subject")
+
 public class Subject {
-    @Basic
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer subjectId;
 
-    @Basic
+
     private String subjectName;
 
-    @Basic
+    @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
 
 
-    @Basic
+    private Integer studentId;
+
     private String floor;
 
-    @Basic
+
     private boolean active;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;

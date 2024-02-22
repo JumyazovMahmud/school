@@ -17,7 +17,7 @@ import java.util.Map;
 public class ResponseStudentScheduleDto {
 
     private Integer scheduleStudentId;
-    private List<Schedule> lessons;
+    private List<ResponseScheduleDto> lessons;
     private Integer classId;
     private Integer studentId;
 
