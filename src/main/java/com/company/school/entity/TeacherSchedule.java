@@ -29,8 +29,8 @@ public class TeacherSchedule {
 
     @Column(name = "class_id")
     private Integer classId;
-    @Column(name = "teacher_id")
 
+    @Column(name = "teacher_id")
     private Integer teacherId;
 
 

@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -37,10 +38,10 @@ public class Subject {
     private boolean active;
 
 
-    @CreationTimestamp
+
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
+
     private LocalDateTime updatedAt;
 
 
