@@ -14,7 +14,7 @@ import static com.company.school.dto.SimpleResponseDto.convertStatusCodeByData;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "Rooms")
+@RequestMapping(value = "rooms")
 public class RoomsController implements SimpleRequestCrud<Integer, RequestRoomsDto, ResponseRoomsDto> {
 
     private final RoomsService roomsService;

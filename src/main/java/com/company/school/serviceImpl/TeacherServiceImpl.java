@@ -5,13 +5,12 @@ import com.company.school.dto.request.RequestTeacherDto;
 import com.company.school.dto.response.ResponseTeacherDto;
 import com.company.school.service.TeacherService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 
 @Component
 @RequiredArgsConstructor
-public class TeacherServiceImpl implements TeacherService<ResponseTeacherDto , Integer , RequestTeacherDto> {
+public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public ResponseDto<ResponseTeacherDto> create(RequestTeacherDto request) {

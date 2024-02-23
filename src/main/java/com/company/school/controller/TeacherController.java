@@ -1,39 +1,41 @@
 package com.company.school.controller;
 
 import com.company.school.dto.ResponseDto;
-import com.company.school.dto.SResponseDto;
 import com.company.school.dto.request.RequestTeacherDto;
 import com.company.school.dto.response.ResponseTeacherDto;
-import com.company.school.serviceImpl.TeacherServiceImpl;
-import com.company.school.util.SCrud;
+import com.company.school.service.TeacherService;
+import com.company.school.util.SimpleRequestCrud;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static com.company.school.dto.SimpleResponseDto.convertStatusCodeByData;
 
 @RestController
 @RequestMapping(value = "teachers")
 @RequiredArgsConstructor
-public class TeacherController implements SCrud<ResponseTeacherDto , Integer , RequestTeacherDto> {
-    private final TeacherServiceImpl teacherService;
+public class TeacherController implements SimpleRequestCrud<Integer , RequestTeacherDto , ResponseTeacherDto> {
+    private final TeacherService teacherService;
     @Override
-    public ResponseEntity<ResponseDto<ResponseTeacherDto>> create(RequestTeacherDto request) {
-        return SResponseDto.convertStatusCodeByData(this.teacherService.create(request));
+    @PostMapping
+    public ResponseEntity<ResponseDto<ResponseTeacherDto>> createEntity(@RequestBody RequestTeacherDto entity) {
+        return convertStatusCodeByData(this.teacherService.create(entity));
     }
 
     @Override
-    public ResponseEntity<ResponseDto<ResponseTeacherDto>> get(Integer entityId) {
-        return null;
+    public ResponseEntity<ResponseDto<ResponseTeacherDto>> getEntity(@RequestParam(value = "id") Integer entityId) {
+        return convertStatusCodeByData(this.teacherService.get(entityId));
     }
 
     @Override
-    public ResponseEntity<ResponseDto<ResponseTeacherDto>> update(Integer entityId, RequestTeacherDto request) {
-        return null;
+    public ResponseEntity<ResponseDto<ResponseTeacherDto>> updateEntity(@RequestParam(value = "id") Integer entityId,
+                                                                        @RequestBody RequestTeacherDto entity) {
+        return convertStatusCodeByData(this.teacherService.update(entityId, entity));
     }
 
     @Override
-    public ResponseEntity<ResponseDto<ResponseTeacherDto>> delete(Integer entityId) {
-        return null;
+    public ResponseEntity<ResponseDto<ResponseTeacherDto>> deleteEntity(@RequestParam(value = "id") Integer entityId) {
+        return convertStatusCodeByData(this.teacherService.delete(entityId));
     }
+
 }
