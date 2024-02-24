@@ -18,6 +18,10 @@ public abstract class MarksMapper {
 
     public abstract ResponseMarksDto toDto(Marks marks);
 
+    @Mapping(target = "marksId", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "deletedAt", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Marks.class)
     public abstract Marks updateMarks(RequestMarksDto dto, @MappingTarget Marks marks);
 

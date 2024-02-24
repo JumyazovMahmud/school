@@ -21,6 +21,9 @@ public abstract class AdministrationMapper {
     public abstract ResponseAdminstrationDto toDto(Administration administration);
 
 
+    @Mapping(target = "administrationId", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Administration.class)
     public abstract Administration updateAdministration(RequestAdminstrationDto dto, @MappingTarget Administration administration);
 

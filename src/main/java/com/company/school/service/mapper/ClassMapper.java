@@ -25,9 +25,14 @@ public abstract class ClassMapper {
     @Mapping(target = "teacherSchedule", ignore = true)
     public abstract ResponseClassDto toDto(Clazz clazz);
 
-    @Mapping(target = "teacherSchedule",expression = "java(this.attendanceMapper.toDto)")
+    @Mapping(target = "teacherSchedule", expression = "java(this.attendanceMapper.toDto)")
     public abstract ResponseClassDto toDtoWithClass(Clazz clazz);
 
+    @Mapping(target = "classId")
+    @Mapping(target = "teacherSchedule")
+    @Mapping(target = "createdAt")
+    @Mapping(target = "updatedAt")
+    @Mapping(target = "deletedAt")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Clazz.class)
     public abstract Clazz updateClazz(ResponseClassDto dto, @MappingTarget Clazz clazz);
 
