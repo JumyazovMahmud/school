@@ -25,7 +25,7 @@ public class Marks {
 
     private String studentName;
 
-    private  String mark;
+    private String mark;
 
     private String subjectName;
 
@@ -34,9 +34,7 @@ public class Marks {
 //    @OneToOne(mappedBy = "studentId" , fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 //    private List<Student> students;
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 

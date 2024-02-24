@@ -20,8 +20,8 @@ public class ResponseClassDto {
     private Integer mentorId;
     private Integer roomId;
     private Boolean status;
+    private ResponseTeacherScheduleDto teacherSchedule;
 
-    private TeacherSchedule teacherSchedule;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

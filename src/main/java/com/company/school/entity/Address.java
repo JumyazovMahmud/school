@@ -35,9 +35,7 @@ public class Address {
     private String city;
 
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 }
