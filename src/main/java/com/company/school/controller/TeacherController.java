@@ -23,17 +23,20 @@ public class TeacherController implements SimpleRequestCrud<Integer , RequestTea
     }
 
     @Override
+    @GetMapping
     public ResponseEntity<ResponseDto<ResponseTeacherDto>> getEntity(@RequestParam(value = "id") Integer entityId) {
         return convertStatusCodeByData(this.teacherService.get(entityId));
     }
 
     @Override
+    @PutMapping
     public ResponseEntity<ResponseDto<ResponseTeacherDto>> updateEntity(@RequestParam(value = "id") Integer entityId,
                                                                         @RequestBody RequestTeacherDto entity) {
         return convertStatusCodeByData(this.teacherService.update(entityId, entity));
     }
 
     @Override
+    @DeleteMapping
     public ResponseEntity<ResponseDto<ResponseTeacherDto>> deleteEntity(@RequestParam(value = "id") Integer entityId) {
         return convertStatusCodeByData(this.teacherService.delete(entityId));
     }

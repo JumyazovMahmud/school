@@ -59,10 +59,10 @@ public class RequestStudentDto {
     private Integer marksId;
 
     @NotNull(message = "Status cannot be null")
-    private Student.Status status;
+    private Student status;
 
     @NotNull(message = "Gender cannot be null")
-    private Student.Gender gender;
+    private Student gender;
 
     private boolean attended;
 }

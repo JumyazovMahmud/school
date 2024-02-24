@@ -1,4 +1,4 @@
-package com.company.school.serviceImpl;
+package com.company.school.service.impl;
 
 import com.company.school.dto.ResponseDto;
 import com.company.school.dto.request.RequestTeacherDto;
