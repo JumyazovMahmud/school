@@ -20,7 +20,7 @@ public class ResponseTeacherDto {
     private String email;
     private String password;
 
-//    private Address address;
+    private ResponseAddressDto address;
 
     private String phoneNumber;
     private Boolean active;

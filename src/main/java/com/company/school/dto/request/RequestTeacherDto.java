@@ -31,7 +31,7 @@ public class RequestTeacherDto {
     @NotBlank(message = "Password cannot be null or empty")
     private String password;
 
-//    private Address address;
+    private RequestAddressDto address;
 
     @NotBlank(message = "Phone number cannot be null or empty")
     private String phoneNumber;

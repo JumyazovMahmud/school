@@ -3,7 +3,7 @@ package com.company.school.dto;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
-public class SResponseDto {
+public class SimpleResponseDto {
     public static  <T> ResponseEntity<ResponseDto<T>> convertStatusCodeByData(ResponseDto<T> dto){
         switch (dto.getCode()){
             case 0 ->{

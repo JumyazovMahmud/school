@@ -47,9 +47,6 @@ public class Teacher {
     @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
     private TeacherSchedule teacherSchedule;
 
-
-
-
     private String phoneNumber;
     private Boolean active;
 

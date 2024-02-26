@@ -3,7 +3,7 @@ package com.company.school.util;
 import com.company.school.dto.ResponseDto;
 import org.springframework.http.ResponseEntity;
 
-public interface SCrud<T , K , L> {
+public interface SimpleCrud<T , K , L> {
 
     // Response - T
     // Integer - K

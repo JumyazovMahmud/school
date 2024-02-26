@@ -1,5 +1,7 @@
 package com.company.school.entity;
 
+import com.company.school.entity.enums.Gender;
+import com.company.school.entity.enums.Status;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.repository.cdi.Eager;
@@ -54,13 +56,6 @@ public class Student {
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
-    public enum Status {
-        ACTIVE,
-        INACTIVE
-    }
 
-    public enum Gender {
-        MALE,
-        FEMALE
-    }
+
 }
