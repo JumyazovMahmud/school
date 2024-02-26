@@ -26,7 +26,7 @@ public class Schedule {
 
     private Integer studentId;
 
-    @Column(name = "teacher_id" , unique = true)
+//    @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
 //
 //    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)

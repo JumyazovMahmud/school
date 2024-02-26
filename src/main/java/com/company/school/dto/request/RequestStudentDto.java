@@ -1,6 +1,8 @@
 package com.company.school.dto.request;
 
 import com.company.school.entity.Student;
+import com.company.school.entity.enums.Gender;
+import com.company.school.entity.enums.Status;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -59,10 +61,10 @@ public class RequestStudentDto {
     private Integer marksId;
 
     @NotNull(message = "Status cannot be null")
-    private Student status;
+    private Status status;
 
     @NotNull(message = "Gender cannot be null")
-    private Student gender;
+    private Gender gender;
 
     private boolean attended;
 }
