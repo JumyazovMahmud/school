@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ClassServiceImpl implements ClazzService {
+public class ClazzServiceImpl implements ClazzService {
+
     @Override
     public ResponseDto<ResponseClassDto> createEntity(RequestClassDto dto) {
         return null;

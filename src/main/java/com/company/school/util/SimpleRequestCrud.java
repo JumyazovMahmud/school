@@ -3,17 +3,12 @@ package com.company.school.util;
 import com.company.school.dto.ResponseDto;
 import org.springframework.http.ResponseEntity;
 
-public interface SimpleRequestCrud<T , K , L> {
+public interface SimpleRequestCrud<K, RQ, Rs> {
+    ResponseEntity<ResponseDto<Rs>> createEntity(RQ entity);
 
-    // Response - T
-    // Integer - K
-    // Request - L
+    ResponseEntity<ResponseDto<Rs>> getEntity(K entityId);
 
-    ResponseEntity<ResponseDto<T>> create(L request);
+    ResponseEntity<ResponseDto<Rs>> updateEntity(K entityId, RQ entity);
 
-    ResponseEntity<ResponseDto<T>> get(K entityId);
-
-    ResponseEntity<ResponseDto<T>> update(K entityId , L request);
-
-    ResponseEntity<ResponseDto<T>> delete(K entityId);
+    ResponseEntity<ResponseDto<Rs>> deleteEntity(K entityId);
 }
