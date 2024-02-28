@@ -16,6 +16,4 @@ public class RequestStudentScheduleDto {
     @NotNull(message = "Student id cannot be null")
     private Integer studentId;
 
-
-
 }

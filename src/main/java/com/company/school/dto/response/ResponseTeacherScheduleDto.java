@@ -15,19 +15,12 @@ import java.util.List;
 public class ResponseTeacherScheduleDto {
 
     private Integer teacherScheduleId;
-
     private Integer classId;
-
     private Integer teacherId;
-
     private List<ResponseScheduleDto> scheduleList;
 
-
     private LocalDateTime createdAt;
-
-
     private LocalDateTime updatedAt;
-
-
     private LocalDateTime deletedAt;
+
 }

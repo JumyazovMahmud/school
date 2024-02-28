@@ -1,6 +1,6 @@
 package com.company.school.dto.response;
 
-import com.company.school.dto.request.RequestTeacherRoleDto;
+import com.company.school.entity.TeacherRole;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -25,7 +25,7 @@ public class ResponseTeacherDto {
     private String phoneNumber;
     private Boolean active;
 
-    private List<RequestTeacherRoleDto> roles;
+    private List<TeacherRole> roles;
 
     private Integer schoolId;
 

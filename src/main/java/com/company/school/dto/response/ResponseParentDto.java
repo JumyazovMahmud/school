@@ -27,10 +27,8 @@ public class ResponseParentDto {
     private Integer teacherId;
     private boolean active;
 
-
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
-
     private LocalDateTime deletedAt;
+
 }

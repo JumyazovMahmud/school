@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 public class RequestRoomsDto {
+
     @Min(value = 1 , message = "Room number cannot be lower than 0")
     private int roomNumber;
 
@@ -30,4 +31,5 @@ public class RequestRoomsDto {
 
     @NotBlank(message = "Subject cannot be null or empty")
     private String subject;
+
 }

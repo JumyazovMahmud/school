@@ -10,10 +10,10 @@ import lombok.*;
 @Builder
 public class RequestTeacherScheduleDto {
 
-
     @NotNull(message = "Class id cannot be null")
     private Integer classId;
 
     @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
+
 }

@@ -1,6 +1,7 @@
 package com.company.school.dto.request;
 
 
+import com.company.school.entity.TeacherRole;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -35,18 +36,10 @@ public class RequestTeacherDto {
 
     @NotBlank(message = "Phone number cannot be null or empty")
     private String phoneNumber;
-
-    // Boolean or boolean?
     private Boolean active;
 
-    private List<RequestTeacherRoleDto> roles;
-
-    // Will decide if it is needed or not
+    private List<TeacherRole> roles;
     private Integer schoolId;
-
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 
 }
 

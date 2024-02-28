@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 public class ResponseAddressDto {
+
     private Integer addressId;
     private String addressNumber;
 
@@ -26,7 +27,7 @@ public class ResponseAddressDto {
 
 
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

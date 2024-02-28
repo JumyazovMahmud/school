@@ -22,8 +22,6 @@ public class RequestClassDto {
     @NotNull(message = "Room id cannot be null")
     private Integer roomId;
 
-
     private boolean status;
-
 
 }

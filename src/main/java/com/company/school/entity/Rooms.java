@@ -1,5 +1,6 @@
 package com.company.school.entity;
 
+import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,33 +11,23 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "rooms")
 @Entity
-public class Rooms {
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "rooms")
+public class Rooms extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer roomsId;
-
     private int roomNumber;
-
     private String roomName;
-
     private String floor;
-
     private boolean active;
-
     private LocalDateTime time;
-
     private String subject;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
+
 }

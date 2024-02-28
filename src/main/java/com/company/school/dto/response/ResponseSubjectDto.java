@@ -18,25 +18,13 @@ import java.time.LocalDateTime;
 public class ResponseSubjectDto {
 
     private Integer subjectId;
-
-
     private String subjectName;
-
-
     private Integer teacherId;
-
-
     private String floor;
-
-
     private boolean active;
 
-
     private LocalDateTime createdAt;
-
-
     private LocalDateTime updatedAt;
-
-
     private LocalDateTime deletedAt;
+
 }

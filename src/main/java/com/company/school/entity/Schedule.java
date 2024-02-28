@@ -7,25 +7,21 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Setter
 @Getter
+@Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "schedule")
 public class Schedule {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer scheduleId;
-
     private Integer hours;
-
     private String subjectName;
-
     private Integer studentId;
-
     @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
 //
@@ -33,12 +29,4 @@ public class Schedule {
 //    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
 //    private Subject subject;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-
-
-    private LocalDateTime deletedAt;
 }

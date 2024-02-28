@@ -25,4 +25,5 @@ public class RequestAddressDto {
 
     @NotBlank(message = "City cannot be null or empty")
     private String city;
+
 }

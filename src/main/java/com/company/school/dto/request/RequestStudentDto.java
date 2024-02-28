@@ -1,6 +1,8 @@
 package com.company.school.dto.request;
 
 import com.company.school.entity.Student;
+import com.company.school.entity.enums.Gender;
+import com.company.school.entity.enums.Status;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +17,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestStudentDto {
+
     @NotBlank(message = "Firstname cannot be null or empty")
     private String firstname;
 
@@ -43,8 +46,6 @@ public class RequestStudentDto {
     @Min(value = 6 , message = "Age cannot be lower than 6")
     private int age;
 
-
-
     private LocalDate birthDate;
 
     @NotNull(message = "Subject id cannot be null or empty")
@@ -59,10 +60,11 @@ public class RequestStudentDto {
     private Integer marksId;
 
     @NotNull(message = "Status cannot be null")
-    private Student.Status status;
+    private Status status;
 
     @NotNull(message = "Gender cannot be null")
-    private Student.Gender gender;
+    private Gender gender;
 
     private boolean attended;
+
 }

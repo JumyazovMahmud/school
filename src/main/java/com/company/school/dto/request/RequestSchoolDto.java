@@ -23,7 +23,6 @@ public class RequestSchoolDto {
     @NotNull(message = "Available cannot be null or empty!")
     private Boolean available;
 
-
     @NotNull(message = "ImageId cannot be null or empty!")
     private Integer imageId;
 
@@ -35,4 +34,5 @@ public class RequestSchoolDto {
 
     @NotNull(message = "TeacherId cannot be null or empty!")
     private Integer teacherId;
+
 }

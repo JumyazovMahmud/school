@@ -25,5 +25,4 @@ public class ResponseStudentScheduleDto {
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
-
 }

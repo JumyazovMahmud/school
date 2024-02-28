@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseAttendanceDto {
+
     private Integer attendanceId;
     private String clazz;
     private Integer absent;

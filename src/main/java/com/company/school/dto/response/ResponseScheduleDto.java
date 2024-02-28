@@ -11,22 +11,15 @@ import java.time.LocalDateTime;
 @Builder
 
 public class ResponseScheduleDto {
+
     private Integer scheduleId;
-
     private Integer hours;
-
     private String subject;
-
     private Integer studentId;
-
     private Integer teacherId;
 
-
     private LocalDateTime createdAt;
-
-
     private LocalDateTime updatedAt;
-
-
     private LocalDateTime deletedAt;
+
 }

@@ -24,5 +24,4 @@ public class ResponseClassDto {
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
-
 }

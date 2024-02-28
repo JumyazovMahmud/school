@@ -23,7 +23,6 @@ public class ResponseSchoolDto {
     private Integer addressId;
     private Integer teacherId;
 
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;

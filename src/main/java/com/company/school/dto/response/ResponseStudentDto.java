@@ -1,6 +1,8 @@
 package com.company.school.dto.response;
 
 import com.company.school.entity.Student;
+import com.company.school.entity.enums.Gender;
+import com.company.school.entity.enums.Status;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -30,10 +32,11 @@ public class ResponseStudentDto {
     private Integer marksId;
     private boolean attended;
 
-    private Student.Status status;
-    private Student.Gender gender;
+    private Status status;
+    private Gender gender;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

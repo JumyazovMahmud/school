@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(name = "Marks")
 public class ResponseMarksDto {
+
     private Integer marksId;
     private Integer studentId;
 

@@ -18,7 +18,6 @@ public class RequestSubjectDto {
     @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
 
-
     @NotBlank(message = "Floor cannot be null")
     private String floor;
 

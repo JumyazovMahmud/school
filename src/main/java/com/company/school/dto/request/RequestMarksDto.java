@@ -21,5 +21,4 @@ public class RequestMarksDto {
     @NotNull(message = "Student Id cannot be null or empty!")
     private Integer studentId;
 
-
 }

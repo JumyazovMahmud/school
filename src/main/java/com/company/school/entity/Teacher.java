@@ -1,5 +1,6 @@
 package com.company.school.entity;
 
+import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "teachers")
-public class Teacher {
+public class Teacher extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,10 +54,6 @@ public class Teacher {
     @OneToMany(mappedBy = "id" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
     private List<TeacherRole> roles;
 
-
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 
 
 }

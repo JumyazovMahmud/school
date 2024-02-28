@@ -1,6 +1,7 @@
 package com.company.school.entity;
 
 import com.company.school.entity.enums.AdminRole;
+import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "administration")
-public class Administration {
+public class Administration extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,10 +35,4 @@ public class Administration {
     @Column(name = "school_id")
     private Integer schoolId;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 }

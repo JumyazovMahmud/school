@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestAdministrationDto {
-
 
     @NotNull(message = "Id cannot be null or empty")
     private Integer id;
@@ -35,14 +33,7 @@ public class RequestAdministrationDto {
     @NotBlank(message = "Phone number cannot be null or empty")
     private String phoneNumber;
 
-    // Boolean or boolean?
     private Boolean active;
-
-
-    // Will decide if it is needed or not
     private Integer schoolId;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
 }
