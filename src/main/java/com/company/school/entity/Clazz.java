@@ -35,10 +35,8 @@ public class Clazz {
     private TeacherSchedule teacherSchedule;
 
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     private LocalDateTime deletedAt;

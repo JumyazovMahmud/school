@@ -32,21 +32,18 @@ public class Parent {
 
 
     @OneToMany
-    @JoinColumn(name = "student_id" , referencedColumnName = "student_id" , insertable = false , updatable = false)
+    @JoinColumn(name = "student_id", referencedColumnName = "student_id", insertable = false, updatable = false)
     private List<Student> students;
 
     private boolean active;
 
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id", referencedColumnName="teacher_id")
+    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
     private Teacher teacher;
 
 
-
-    @CreationTimestamp
     private LocalDateTime createdAt;
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 }

@@ -29,7 +29,7 @@ public class StudentSchedule {
 //
 //    private Map<Integer, String> lessons;
 
-    @OneToMany(mappedBy = "studentId" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     private Integer classId;
@@ -37,12 +37,8 @@ public class StudentSchedule {
     private Integer studentId;
 
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
-
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
-
     private LocalDateTime deletedAt;
 
 

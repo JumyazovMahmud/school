@@ -25,12 +25,9 @@ public class Attendance {
     @Column(name = "teacher_id")
     private Integer teacherId;
 
-    @CreationTimestamp
+
     private LocalDateTime createdAt;
-
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
-
     private LocalDateTime deletedAt;
 
 }
