@@ -1,11 +1,9 @@
-package com.company.school.mapper;
+package com.company.school.service.mapper;
 
 import com.company.school.dto.request.RequestSchoolDto;
 import com.company.school.dto.response.ResponseSchoolDto;
-import com.company.school.entity.Parent;
 import com.company.school.entity.School;
 import org.mapstruct.*;
-import org.springframework.scheduling.config.ScheduledTaskHolder;
 
 import java.util.stream.Collectors;
 

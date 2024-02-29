@@ -1,9 +1,7 @@
-package com.company.school.mapper;
+package com.company.school.service.mapper;
 
-import com.company.school.dto.request.RequestSchoolDto;
 import com.company.school.dto.request.RequestStudentDto;
 import com.company.school.dto.response.ResponseStudentDto;
-import com.company.school.entity.Parent;
 import com.company.school.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.*;

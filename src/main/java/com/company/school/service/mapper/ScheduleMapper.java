@@ -1,11 +1,9 @@
-package com.company.school.mapper;
+package com.company.school.service.mapper;
 
 import com.company.school.dto.response.ResponseScheduleDto;
 import com.company.school.entity.Schedule;
-import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import java.util.stream.Collectors;
 

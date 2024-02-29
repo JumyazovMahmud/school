@@ -1,4 +1,4 @@
-package com.company.school.mapper;
+package com.company.school.service.mapper;
 
 
 import com.company.school.dto.request.RequestParentDto;
