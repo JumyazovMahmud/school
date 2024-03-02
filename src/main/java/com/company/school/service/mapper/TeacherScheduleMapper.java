@@ -3,9 +3,7 @@ package com.company.school.service.mapper;
 import com.company.school.dto.request.RequestTeacherScheduleDto;
 import com.company.school.dto.response.ResponseTeacherScheduleDto;
 import com.company.school.entity.TeacherSchedule;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public abstract class TeacherScheduleMapper {
@@ -22,6 +20,7 @@ public abstract class TeacherScheduleMapper {
     @Mapping(target = "deletedAt",ignore = true)
     public abstract ResponseTeacherScheduleDto toDto(TeacherSchedule entity);
 
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,resultType = TeacherSchedule.class)
     public abstract TeacherSchedule update(RequestTeacherScheduleDto dto, @MappingTarget TeacherSchedule entity);
 
 }
