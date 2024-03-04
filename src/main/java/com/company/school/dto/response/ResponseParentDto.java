@@ -29,9 +29,9 @@ public class ResponseParentDto {
     private Integer studentId;
     private Integer teacherId;
     private boolean active;
-    private List<Student> students;
+    private List<ResponseStudentDto> students;
 
-    private Teacher teacher;
+    private ResponseTeacherDto teacher;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
