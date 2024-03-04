@@ -10,19 +10,19 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
-@Builder
 @NoArgsConstructor
+@Entity
 @AllArgsConstructor
 @Table(name = "teacher_schedule")
+@Builder
 public class TeacherSchedule {
-
-
+    @Basic
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer teacherScheduleId;
 
-    @OneToMany(mappedBy = "teacherId" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "teacherId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     @Column(name = "class_id")
@@ -31,5 +31,11 @@ public class TeacherSchedule {
     @Column(name = "teacher_id")
     private Integer teacherId;
 
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    private LocalDateTime deletedAt;
 
 }

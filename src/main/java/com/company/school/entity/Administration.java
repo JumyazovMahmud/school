@@ -1,11 +1,8 @@
 package com.company.school.entity;
 
 import com.company.school.entity.enums.AdminRole;
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -16,17 +13,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "administration")
-public class Administration extends AbsEntity {
+public class Administration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer administrationId;
     private String firstname;
     private String lastname;
     private String email;
     private String password;
 
-    @Enumerated(EnumType.STRING)
     private AdminRole role;
 
     private String phoneNumber;
@@ -35,4 +32,7 @@ public class Administration extends AbsEntity {
     @Column(name = "school_id")
     private Integer schoolId;
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }

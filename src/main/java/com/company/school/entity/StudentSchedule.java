@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,11 +16,12 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "schedule_student")
-public class StudentSchedule extends AbsEntity {
+public class StudentSchedule {
 
     @Id
     @Column(name = "schedule_student_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer scheduleStudentId;
 
 //    @ElementCollection
@@ -29,10 +29,17 @@ public class StudentSchedule extends AbsEntity {
 //
 //    private Map<Integer, String> lessons;
 
-    @OneToMany(mappedBy = "studentId" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     private Integer classId;
+
     private Integer studentId;
+
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+
 
 }

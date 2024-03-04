@@ -17,9 +17,6 @@ import java.util.List;
 public class RequestTeacherDto {
 
 
-    @NotNull(message = "Id cannot be null or empty")
-    private Integer id;
-
     @NotBlank(message = "Firstname cannot be null or empty")
     private String firstname;
 
@@ -32,13 +29,13 @@ public class RequestTeacherDto {
     @NotBlank(message = "Password cannot be null or empty")
     private String password;
 
-    private RequestAddressDto address;
+
 
     @NotBlank(message = "Phone number cannot be null or empty")
     private String phoneNumber;
     private Boolean active;
 
-    private List<TeacherRole> roles;
+
     private Integer schoolId;
 
 }

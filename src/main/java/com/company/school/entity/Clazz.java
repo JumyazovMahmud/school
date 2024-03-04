@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,15 +14,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "clazz")
-public class Clazz extends AbsEntity {
+public class Clazz {
 
     @Id
     @Column(name = "class_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer classId;
+
     private Integer teacherId;
+
     private Integer studentId;
+
     private Integer roomId;
+
     private Boolean status;
 
     @OneToOne( cascade = CascadeType.ALL , fetch = FetchType.EAGER)
@@ -31,6 +35,11 @@ public class Clazz extends AbsEntity {
     private TeacherSchedule teacherSchedule;
 
 
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    private LocalDateTime deletedAt;
 
 
 }

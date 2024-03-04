@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,9 +13,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(name = "School")
-public class School extends AbsEntity {
-
+public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "school_id")
@@ -25,8 +24,9 @@ public class School extends AbsEntity {
     private Integer numberOfSchool;
     private String additionalInformation;
     private boolean available;
-    private Integer addressId;
 
+    @Column(name = "address_id")
+    private Integer addressId;
     @Column(name = "teacher_id")
     private Integer teacherId;
 
@@ -34,13 +34,18 @@ public class School extends AbsEntity {
     @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
     private List<Teacher> teachers;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)  //
     @JoinColumn(name = "address_id", referencedColumnName = "address_id", insertable = false, updatable = false)
     private Address address;
+
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "school_id", referencedColumnName = "school_id", insertable = false, updatable = false)
     private List<Administration> administrations;
 
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 
 }
