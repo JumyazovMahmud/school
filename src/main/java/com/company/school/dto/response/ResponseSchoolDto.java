@@ -4,8 +4,6 @@ import com.company.school.entity.Address;
 import com.company.school.entity.Administration;
 import com.company.school.entity.Teacher;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,11 +26,11 @@ public class ResponseSchoolDto {
     private Integer teacherId;
 
 
-    private List<Teacher> teachers;
+    private ResponseTeacherDto teachers;
 
-    private Address address;
+    private ResponseAddressDto address;
 
-    private List<Administration> administrations;
+    private List<ResponseAdminstrationDto> administrations;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

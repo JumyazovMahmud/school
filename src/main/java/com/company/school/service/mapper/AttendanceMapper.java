@@ -25,7 +25,7 @@ public abstract class AttendanceMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "deletedAt", ignore = true)
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Administration.class)
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Attendance.class)
     public abstract Attendance updateAttendance(RequestAttendanceDto dto, @MappingTarget Attendance attendance);
 
 }
