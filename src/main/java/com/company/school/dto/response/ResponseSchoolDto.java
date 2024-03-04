@@ -1,8 +1,5 @@
 package com.company.school.dto.response;
 
-import com.company.school.entity.Address;
-import com.company.school.entity.Administration;
-import com.company.school.entity.Teacher;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -30,7 +27,7 @@ public class ResponseSchoolDto {
 
     private ResponseAddressDto address;
 
-    private List<ResponseAdminstrationDto> administrations;
+    private List<ResponseAdministrationDto> administrations;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
