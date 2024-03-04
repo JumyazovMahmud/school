@@ -2,8 +2,7 @@ package com.company.school.service.mapper;
 
 import com.company.school.dto.response.ResponseScheduleDto;
 import com.company.school.entity.Schedule;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 import java.util.stream.Collectors;
 
@@ -11,18 +10,15 @@ import java.util.stream.Collectors;
 public abstract class ScheduleMapper {
 
     @Mapping(target = "scheduleId" , ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
-    @Mapping(target = "deletedAt",ignore = true)
+    @Mapping(target = "subject" , ignore = true)
     public abstract Schedule toEntity(ResponseScheduleDto dto);
 
-
+    @Mapping(target = "subject" , ignore = true)
     public abstract ResponseScheduleDto toDto(Schedule schedule);
 
-//    @Mapping(target = "scheduleId" , ignore = true)
-//    @Mapping(target = "createdAt",ignore = true)
-//    @Mapping(target = "updatedAt",ignore = true)
-//    @Mapping(target = "deletedAt",ignore = true)
-//    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-//    public abstract Schedule updateSchedule(Schedule schedule , ResponseScheduleDto dto);
+    @Mapping(target = "scheduleId" , ignore = true)
+    @Mapping(target = "subject" , ignore = true)
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Schedule.class)
+    public abstract Schedule updateSchedule(@MappingTarget Schedule schedule , ResponseScheduleDto dto);
+
 }

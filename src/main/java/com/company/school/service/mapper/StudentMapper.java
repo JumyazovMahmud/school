@@ -19,4 +19,5 @@ public abstract class StudentMapper {
     @Mapping(target = "studentId", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Student.class)
     public abstract Student updateStudent(RequestStudentDto dto, @MappingTarget Student student);
+
 }

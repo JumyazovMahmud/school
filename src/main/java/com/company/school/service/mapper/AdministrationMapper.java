@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 @Mapper(componentModel = "spring", imports = {Collectors.class, AbsEntity.class})
 public abstract class AdministrationMapper {
 
-
     @Mapping(target = "administrationId", ignore = true)
     public abstract Administration toEntity(RequestAdminstrationDto dto);
 

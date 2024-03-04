@@ -15,22 +15,11 @@ public abstract class RoomsMapper {
 
 
     @Mapping(target = "roomsId" , ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
-    @Mapping(target = "deletedAt",ignore = true)
     public abstract Rooms toEntity(RequestRoomsDto dto);
-
-
-
 
     public abstract ResponseRoomsDto toDto(Rooms rooms);
 
-
-
     @Mapping(target = "roomsId" , ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
-    @Mapping(target = "deletedAt",ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , resultType = Rooms.class)
     public abstract Rooms updateRoom(@MappingTarget Rooms rooms , RequestRoomsDto dto);
 }

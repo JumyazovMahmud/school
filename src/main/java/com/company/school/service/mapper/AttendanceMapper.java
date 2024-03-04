@@ -12,12 +12,10 @@ import java.util.stream.Collectors;
 @Mapper(componentModel = "spring", imports = {Collectors.class, AbsEntity.class})
 public abstract class AttendanceMapper {
 
-
     @Mapping(target = "attendanceId", ignore = true)
     public abstract Attendance toEntity(RequestAttendanceDto dto);
 
     public abstract ResponseAttendanceDto toDto(Attendance attendance);
-
 
     @Mapping(target = "attendanceId", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Attendance.class)

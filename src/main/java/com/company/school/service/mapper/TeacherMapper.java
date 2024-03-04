@@ -16,7 +16,6 @@ public abstract class TeacherMapper {
 
     public abstract ResponseTeacherDto toDto(Teacher teacher);
 
-
     @Mapping(target = "teacherId", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Teacher.class)
     public abstract Teacher updateTeacher(RequestTeacherDto dto,  @MappingTarget Teacher teacher);

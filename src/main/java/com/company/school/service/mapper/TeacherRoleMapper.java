@@ -16,4 +16,5 @@ public abstract class TeacherRoleMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,resultType = TeacherRole.class )
     public abstract TeacherRole update(RequestTeacherRolesDto dto, @MappingTarget TeacherRole role);
+
 }

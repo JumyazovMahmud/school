@@ -9,13 +9,11 @@ import org.mapstruct.*;
 public abstract class SubjectMapper {
 
     @Mapping(target = "subjectId",ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
-    @Mapping(target = "deletedAt",ignore = true)
     public abstract Subject toEntity(RequestSubjectDto dto);
 
     public abstract ResponseSubjectDto toDto(Subject subject);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Subject.class)
     public abstract Subject updateSubject(RequestSubjectDto dto,@MappingTarget Subject subject);
+
 }
