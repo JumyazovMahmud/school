@@ -31,5 +31,7 @@ public class Subject extends AbsEntity {
     private String floor;
     private boolean active;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Schedule schedule;
 
 }

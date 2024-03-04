@@ -1,14 +1,9 @@
 package com.company.school.entity;
 
 import com.company.school.entity.template.AbsEntity;
-import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.sql.results.jdbc.spi.JdbcValuesSourceProcessingState;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -30,16 +25,17 @@ public class Parent extends AbsEntity {
     @Column(name = "teacher_id")
     private Integer teacherId;
 
+    @Column(name = "student_id")
     private Integer studentId;
 
     @OneToMany
-    @JoinColumn(name = "student_id" , referencedColumnName = "student_id" , insertable = false , updatable = false)
+    @JoinColumn(name = "student_id", insertable = false, updatable = false)
     private List<Student> students;
 
     private boolean active;
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id", referencedColumnName="teacher_id")
+    @JoinColumn(name = "teacher_id", insertable = false, updatable = false)
     private Teacher teacher;
 
 }

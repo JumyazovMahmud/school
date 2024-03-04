@@ -10,8 +10,8 @@ import java.util.Optional;
 @Repository
 public interface AdministrationRespository extends JpaRepository<Administration, Integer> {
 
-    Optional<Administration> findAdministrationByIdAndDeletedAtIsNull(Integer adminId);
+    Optional<Administration> findAdministrationByAdministrationIdAndDeletedAtIsNull(Integer adminId);
 
-    Optional<Administration> findAdministrationByIdAndActiveIsTrue(Integer adminId);
+    Optional<Administration> findAdministrationByAdministrationIdAndActiveIsTrue(Integer adminId);
 
 }

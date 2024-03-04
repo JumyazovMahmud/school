@@ -35,7 +35,4 @@ public class StudentSchedule extends AbsEntity {
     private Integer classId;
     private Integer studentId;
 
-
-
-
 }

@@ -20,7 +20,7 @@ public class Teacher extends AbsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "teacher_id")
-    private Integer id;
+    private Integer teacherId;
     private String firstname;
     private String lastname;
     private String email;

@@ -19,6 +19,7 @@ import java.util.Map;
 @AllArgsConstructor
 @Table(name = "Marks")
 public class Marks extends AbsEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer marksId;

@@ -10,9 +10,9 @@ import java.util.Optional;
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 
-    Optional<Teacher> findTeacherByIdAndDeletedAtIsNull(Integer teacherId);
+    Optional<Teacher> findTeacherByTeacherIdAndDeletedAtIsNull(Integer teacherId);
 
-    Optional<Teacher> findTeacherByIdAndActiveIsTrue(Integer teacherId);
+    Optional<Teacher> findTeacherByTeacherIdAndActiveIsTrue(Integer teacherId);
 
 
 }

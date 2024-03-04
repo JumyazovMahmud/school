@@ -20,13 +20,13 @@ public class Administration extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer administrationId;
     private String firstname;
     private String lastname;
     private String email;
     private String password;
 
+    @Enumerated(EnumType.STRING)
     private AdminRole role;
 
     private String phoneNumber;
