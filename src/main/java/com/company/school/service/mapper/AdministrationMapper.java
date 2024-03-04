@@ -1,7 +1,8 @@
 package com.company.school.service.mapper;
 
 import com.company.school.dto.request.RequestAdminstrationDto;
-import com.company.school.dto.response.ResponseAdminstrationDto;
+import com.company.school.dto.response.ResponseAdministrationDto;
+//import com.company.school.dto.response.ResponseAdminstrationDto;
 import com.company.school.entity.Administration;
 import org.mapstruct.*;
 
@@ -17,7 +18,7 @@ public abstract class AdministrationMapper {
     public abstract Administration toEntity(RequestAdminstrationDto dto);
 
 
-    public abstract ResponseAdminstrationDto toDto(Administration administration);
+    public abstract ResponseAdministrationDto toDto(Administration administration);
 
 
     @Mapping(target = "administrationId", ignore = true)
