@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "administration")
+@Table(name = "administrations")
 public class Administration extends AbsEntity {
 
     @Id

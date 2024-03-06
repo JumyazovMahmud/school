@@ -16,17 +16,19 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "subject")
+@Table(name = "subjects")
 public class Subject extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "subject_id")
     private Integer subjectId;
     private String subjectName;
 
     @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
 
+    @Column(name = "student_id")
     private Integer studentId;
     private String floor;
     private boolean active;

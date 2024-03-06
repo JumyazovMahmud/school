@@ -9,8 +9,6 @@ import java.util.Optional;
 @Repository
 public interface AddressRepository extends JpaRepository<Address,Integer> {
 
-    int a = 0;
-
     Optional<Address> findByAddressIdAndDeletedAtIsNull(Integer addressId);
 
 }

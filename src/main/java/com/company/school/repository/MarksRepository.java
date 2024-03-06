@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface MarksRepository extends JpaRepository<Marks, Integer> {
+
     Optional<Marks> findByMarksIdAndDeletedAtIsNull(Integer marksId);
 }

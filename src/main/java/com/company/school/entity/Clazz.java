@@ -31,6 +31,4 @@ public class Clazz extends AbsEntity {
     private TeacherSchedule teacherSchedule;
 
 
-
-
 }

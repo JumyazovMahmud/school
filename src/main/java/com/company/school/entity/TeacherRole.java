@@ -8,12 +8,13 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "teacher_role")
+@Table(name = "teacher_roles")
 public class TeacherRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Enumerated(EnumType.STRING)
     private TeacherRoles roles;
 

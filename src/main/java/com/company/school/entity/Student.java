@@ -37,13 +37,18 @@ public class Student extends AbsEntity {
     private int age;
     private LocalDate birthDate;
 
+    @Column(name = "subject_id")
     private Integer subjectId;
     private Integer teacherId;
     private Integer classId;
+
+    @Column(name = "marks_id")
     private Integer marksId;
+
     private boolean attended;
 
-    @OneToMany(mappedBy = "studentId" , fetch = FetchType.EAGER , cascade =  CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade =  CascadeType.ALL)
+    @JoinColumn(name = "subject_id", referencedColumnName = "subject_id", updatable = false, insertable = false)
     private List<Subject> subject;
 
     @Enumerated(EnumType.STRING)
@@ -52,7 +57,7 @@ public class Student extends AbsEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Marks> marks;
 
 
