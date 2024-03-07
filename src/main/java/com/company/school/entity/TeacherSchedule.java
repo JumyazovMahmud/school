@@ -1,11 +1,9 @@
 package com.company.school.entity;
 
+import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
