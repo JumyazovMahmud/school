@@ -5,14 +5,14 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class ResponseAdministrationDto {
 
-    private Integer id;
+    private Integer administrationId;
     private String firstname;
     private String lastname;
     private String email;
@@ -22,10 +22,10 @@ public class ResponseAdministrationDto {
 
     private String phoneNumber;
     private Boolean active;
+
     private Integer schoolId;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
-
 }

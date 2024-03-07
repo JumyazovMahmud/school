@@ -2,7 +2,6 @@ package com.company.school.entity;
 
 import com.company.school.entity.enums.Gender;
 import com.company.school.entity.enums.Status;
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.repository.cdi.Eager;
@@ -11,21 +10,18 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "students")
-public class Student extends AbsEntity {
-
-
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_id")
     private Integer studentId;
-
     private String firstname;
     private String lastname;
     private String middleName;
@@ -59,6 +55,13 @@ public class Student extends AbsEntity {
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Marks> marks;
+
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+
+
 
 
 }

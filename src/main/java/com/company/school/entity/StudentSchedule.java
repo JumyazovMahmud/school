@@ -29,11 +29,7 @@ public class StudentSchedule extends AbsEntity {
 //
 //    private Map<Integer, String> lessons;
 
-    @Column(name = "schedule_id")
-    private Integer scheduleId;
-
-    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
-    @JoinColumn(name = "schedule_id", referencedColumnName = "schedule_id", updatable = false, insertable = false)
+    @OneToMany(mappedBy = "studentId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Schedule> scheduleList;
 
     private Integer classId;

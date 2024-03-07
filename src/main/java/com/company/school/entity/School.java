@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "schools")
+@Table(name = "School")
 public class School extends AbsEntity {
 
     @Id
@@ -25,6 +25,8 @@ public class School extends AbsEntity {
     private Integer numberOfSchool;
     private String additionalInformation;
     private boolean available;
+
+    @Column(name = "address_id")
     private Integer addressId;
 
     @Column(name = "teacher_id")

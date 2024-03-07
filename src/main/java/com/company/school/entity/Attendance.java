@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "attendance")
-public class Attendance extends AbsEntity {
+public class Attendance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,11 +22,13 @@ public class Attendance extends AbsEntity {
     private String clazz;
     private Integer absent;
     private LocalDateTime data;
-
     @Column(name = "teacher_id")
     private Integer teacherId;
 
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 
 }
 

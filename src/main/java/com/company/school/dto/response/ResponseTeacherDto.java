@@ -25,7 +25,7 @@ public class ResponseTeacherDto {
     private String phoneNumber;
     private Boolean active;
 
-    private List<TeacherRole> roles;
+    private List<ResponseTeacherRolesDto> roles;
 
     private Integer schoolId;
 

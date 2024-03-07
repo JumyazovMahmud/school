@@ -28,7 +28,6 @@ public class Subject extends AbsEntity {
     @Column(name = "teacher_id" , unique = true)
     private Integer teacherId;
 
-    @Column(name = "student_id")
     private Integer studentId;
     private String floor;
     private boolean active;

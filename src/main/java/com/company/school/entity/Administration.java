@@ -20,6 +20,7 @@ public class Administration extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer administrationId;
     private String firstname;
     private String lastname;

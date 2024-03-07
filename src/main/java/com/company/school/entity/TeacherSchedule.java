@@ -1,6 +1,5 @@
 package com.company.school.entity;
 
-import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
