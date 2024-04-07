@@ -8,10 +8,10 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public abstract class TeacherMapper {
 
-    @Mapping(target = "id",ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
-    @Mapping(target = "deletedAt",ignore = true)
+//    @Mapping(target = "id",ignore = true)
+//    @Mapping(target = "createdAt",ignore = true)
+//    @Mapping(target = "updatedAt",ignore = true)
+//    @Mapping(target = "deletedAt",ignore = true)
     public abstract Teacher toEntity(RequestTeacherDto dto);
 
     @Mapping(target = "address",ignore = true)

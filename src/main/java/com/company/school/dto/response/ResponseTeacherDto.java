@@ -1,6 +1,9 @@
 package com.company.school.dto.response;
 
+import com.company.school.entity.Attendance;
+import com.company.school.entity.Subject;
 import com.company.school.entity.TeacherRole;
+import com.company.school.entity.TeacherSchedule;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -24,6 +27,13 @@ public class ResponseTeacherDto {
 
     private String phoneNumber;
     private Boolean active;
+
+    private ResponseStudentDto subject;
+
+    private ResponseAttendanceDto attendance;
+
+    private ResponseTeacherScheduleDto teacherSchedule;
+
 
     private List<ResponseTeacherRolesDto> roles;
 

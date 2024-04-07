@@ -6,6 +6,7 @@ import com.company.school.entity.Administration;
 import com.company.school.entity.Clazz;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.stream.Collectors;
 
@@ -13,27 +14,28 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public abstract class ClassMapper {
 
-    private final AttendanceMapper attendanceMapper;
+    @Autowired
+    protected TeacherScheduleMapper teacherScheduleMapper;
 
-    @Mapping(target = "classId")
-    @Mapping(target = "teacherSchedule")
-    @Mapping(target = "createdAt")
-    @Mapping(target = "updatedAt")
-    @Mapping(target = "deletedAt")
+//    @Mapping(target = "classId")
+//    @Mapping(target = "teacherSchedule")
+//    @Mapping(target = "createdAt")
+//    @Mapping(target = "updatedAt")
+//    @Mapping(target = "deletedAt")
     public abstract Clazz toEntity(RequestClassDto dto);
 
     @Mapping(target = "teacherSchedule", ignore = true)
     public abstract ResponseClassDto toDto(Clazz clazz);
 
-    @Mapping(target = "teacherSchedule", expression = "java(this.attendanceMapper.toDto)")
+    @Mapping(target = "teacherSchedule", expression = "java(this.teacherScheduleMapper.toDto(clazz.getTeacherSchedule()))")
     public abstract ResponseClassDto toDtoWithClass(Clazz clazz);
 
-    @Mapping(target = "classId")
-    @Mapping(target = "teacherSchedule")
-    @Mapping(target = "createdAt")
-    @Mapping(target = "updatedAt")
-    @Mapping(target = "deletedAt")
+//    @Mapping(target = "classId")
+//    @Mapping(target = "teacherSchedule")
+//    @Mapping(target = "createdAt")
+//    @Mapping(target = "updatedAt")
+//    @Mapping(target = "deletedAt")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Clazz.class)
-    public abstract Clazz updateClazz(ResponseClassDto dto, @MappingTarget Clazz clazz);
+    public abstract Clazz updateClazz(RequestClassDto dto, @MappingTarget Clazz clazz);
 
 }

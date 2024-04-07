@@ -12,20 +12,20 @@ import java.util.stream.Collectors;
 public abstract class AttendanceMapper {
 
 
-    @Mapping(target = "attendanceId", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updatedAt", ignore = true)
-    @Mapping(target = "deletedAt", ignore = true)
+//    @Mapping(target = "attendanceId", ignore = true)
+//    @Mapping(target = "createdAt", ignore = true)
+//    @Mapping(target = "updatedAt", ignore = true)
+//    @Mapping(target = "deletedAt", ignore = true)
     public abstract Attendance toEntity(RequestAttendanceDto dto);
 
     public abstract ResponseAttendanceDto toDto(Attendance attendance);
 
 
-    @Mapping(target = "attendanceId", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updatedAt", ignore = true)
-    @Mapping(target = "deletedAt", ignore = true)
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Administration.class)
+//    @Mapping(target = "attendanceId", ignore = true)
+//    @Mapping(target = "createdAt", ignore = true)
+//    @Mapping(target = "updatedAt", ignore = true)
+//    @Mapping(target = "deletedAt", ignore = true)
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = Attendance.class)
     public abstract Attendance updateAttendance(RequestAttendanceDto dto, @MappingTarget Attendance attendance);
 
 }
