@@ -1,7 +1,9 @@
 package com.company.school.entity.template;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,9 +16,9 @@ import java.time.LocalDateTime;
 @EntityListeners({AuditingEntityListener.class, EntityListeners.class})
 public class AbsEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer Id;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)

@@ -1,14 +1,9 @@
 package com.company.school.entity;
 
+import com.company.school.entity.enums.Mark;
 import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.validator.constraints.UniqueElements;
-
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -16,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "subjects")
+@Table(name = "subject")
 public class Subject extends AbsEntity {
 
     @Id
@@ -24,15 +19,28 @@ public class Subject extends AbsEntity {
     @Column(name = "subject_id")
     private Integer subjectId;
     private String subjectName;
-
-    @Column(name = "teacher_id" , unique = true)
-    private Integer teacherId;
-
-    private Integer studentId;
     private String floor;
     private boolean active;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Schedule schedule;
+    @Column(name = "teacher_id")
+    private Integer teacherId;
+
+    @Column(name = "student_id")
+    private Integer studentId;
+
+    @Column(name = "attendance_id")
+    private Integer attendanceId;
+
+    @Enumerated(EnumType.STRING)
+    private Mark mark;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "attendance_id", insertable = false, updatable = false)
+    private Attendance attendance;
+
+
+
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Schedule schedule;
 
 }

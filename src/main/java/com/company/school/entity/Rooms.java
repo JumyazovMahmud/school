@@ -1,40 +1,34 @@
 package com.company.school.entity;
 
+import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
 @Setter
-@Table(name = "rooms")
+@Getter
 @Entity
-public class Rooms {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "room")
+public class Rooms extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer roomsId;
-
     private int roomNumber;
-
     private String roomName;
-
     private String floor;
-
     private boolean active;
-
     private LocalDateTime time;
-
     private String subject;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "class_id", insertable = false, updatable = false)
+    private Clazz clazz;
+
+
 }

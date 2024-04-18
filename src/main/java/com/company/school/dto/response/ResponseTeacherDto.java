@@ -1,6 +1,5 @@
 package com.company.school.dto.response;
 
-import com.company.school.entity.TeacherRole;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -26,6 +25,10 @@ public class ResponseTeacherDto {
     private Boolean active;
 
     private List<ResponseTeacherRolesDto> roles;
+    private ResponseAttendanceDto attendance;
+    private ResponseSubjectDto subject;
+    private ResponseTeacherScheduleDto teacherSchedule;
+
 
     private Integer schoolId;
 

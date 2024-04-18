@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "parents")
+@Table(name = "parent")
 public class Parent extends AbsEntity {
 
     @Id
@@ -29,13 +29,13 @@ public class Parent extends AbsEntity {
     private Integer studentId;
 
     @OneToMany
-    @JoinColumn(name = "student_id", referencedColumnName = "student_id", insertable = false, updatable = false)
+    @JoinColumn(name = "student_id", insertable = false, updatable = false)
     private List<Student> students;
 
     private boolean active;
-
-    @ManyToOne
-    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
-    private Teacher teacher;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id", insertable = false, updatable = false)
+//    private Teacher teacher;
 
 }

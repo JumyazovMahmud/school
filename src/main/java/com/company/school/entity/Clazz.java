@@ -3,10 +3,8 @@ package com.company.school.entity;
 import com.company.school.entity.template.AbsEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -26,9 +24,24 @@ public class Clazz extends AbsEntity {
     private Integer roomId;
     private Boolean status;
 
-    @OneToOne( cascade = CascadeType.ALL , fetch = FetchType.EAGER)
-    @JoinColumn(name = "class_id",referencedColumnName = "class_id")
-    private TeacherSchedule teacherSchedule;
+    @Column(name = "schedule_id")
+    private Integer scheduleId;
+
+    @OneToMany(mappedBy = "studentId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Student> students;
+
+    @OneToMany(mappedBy = "roomsId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Rooms> rooms;
+
+    @ManyToOne
+    @JoinColumn(name = "schedule_id", insertable = false, updatable = false)
+    private Schedule schedule;
+
+//    @OneToOne(mappedBy = "clazz", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private TeacherSchedule teacherSchedule;
+//
+//    @OneToOne(mappedBy = "clazz", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private StudentSchedule studentScheduleId;
 
 
 }
