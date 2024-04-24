@@ -13,12 +13,9 @@ import java.time.LocalDateTime;
 
 @Data
 @MappedSuperclass
-@EntityListeners({AuditingEntityListener.class, EntityListeners.class})
+@EntityListeners({AuditingEntityListener.class, EntityListener.class})
 public class AbsEntity {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Integer Id;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)

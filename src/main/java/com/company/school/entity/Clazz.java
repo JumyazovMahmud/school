@@ -31,7 +31,7 @@ public class Clazz extends AbsEntity {
     private List<Student> students;
 
     @OneToMany(mappedBy = "roomsId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Rooms> rooms;
+    private List<Room> rooms;
 
     @ManyToOne
     @JoinColumn(name = "schedule_id", insertable = false, updatable = false)

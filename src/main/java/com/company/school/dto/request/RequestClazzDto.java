@@ -8,7 +8,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestClassDto {
+public class RequestClazzDto {
 
     @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;

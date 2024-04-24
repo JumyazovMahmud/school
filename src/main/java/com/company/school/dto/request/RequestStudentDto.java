@@ -1,6 +1,5 @@
 package com.company.school.dto.request;
 
-import com.company.school.entity.Student;
 import com.company.school.entity.enums.Gender;
 import com.company.school.entity.enums.Status;
 import jakarta.validation.constraints.Email;

@@ -4,14 +4,12 @@ import com.company.school.entity.enums.AdminRole;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestAdminstrationDto {
+public class RequestAdministrationDto {
 
     @NotBlank(message = "Firstname cannot be null or empty")
     private String firstname;

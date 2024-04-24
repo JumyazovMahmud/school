@@ -1,6 +1,5 @@
 package com.company.school.dto.response;
 
-import com.company.school.entity.TeacherSchedule;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResponseClassDto {
+public class ResponseClazzDto {
 
     private Integer classId;
     private Integer teacherId;

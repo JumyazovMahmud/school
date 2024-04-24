@@ -4,11 +4,11 @@ package com.company.school.dto.request;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RequestAddressDto {
 
     @NotBlank(message = "Address number cannot be null or empty")

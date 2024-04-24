@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-public class ResponseRoomsDto {
+public class ResponseRoomDto {
 
     private Integer roomsId;
     private int roomNumber;
