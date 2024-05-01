@@ -17,8 +17,7 @@ public class ResponseSchoolDto {
     private Integer numberOfSchool;
     private String additionalInformation;
     private boolean available;
-    private Integer imageId;
-    private Integer customerId;
+
     private Integer addressId;
     private Integer teacherId;
 

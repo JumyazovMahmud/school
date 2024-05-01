@@ -1,20 +1,18 @@
 package com.company.school.dto.response;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.company.school.entity.enums.Mark;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResponseSubjectDto {
 
     private Integer subjectId;
@@ -22,6 +20,8 @@ public class ResponseSubjectDto {
     private Integer teacherId;
     private String floor;
     private boolean active;
+    private Mark mark;
+    private ResponseAttendanceDto attendance;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

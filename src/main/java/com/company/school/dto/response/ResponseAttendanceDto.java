@@ -16,7 +16,7 @@ public class ResponseAttendanceDto {
     private Integer attendanceId;
     private String clazz;
     private Integer absent;
-    private LocalDateTime data;
+    private LocalDateTime date;
     private Integer teacherId;
 
     private LocalDateTime createdAt;

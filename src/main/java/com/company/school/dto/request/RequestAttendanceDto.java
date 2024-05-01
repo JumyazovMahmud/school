@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Builder
@@ -20,5 +22,7 @@ public class RequestAttendanceDto {
 
     @NotNull(message = "Teacher id cannot be null")
     private Integer teacherId;
+
+    private LocalDateTime date;
 
 }

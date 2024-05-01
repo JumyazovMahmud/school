@@ -21,7 +21,7 @@ public class Attendance extends AbsEntity {
     private Integer attendanceId;
     private String clazz;
     private Integer absent;
-    private LocalDateTime data;
+    private LocalDateTime date;
 
     @Column(name = "teacher_id")
     private Integer teacherId;

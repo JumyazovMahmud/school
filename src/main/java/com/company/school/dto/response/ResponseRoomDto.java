@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class ResponseRoomDto {
 
     private Integer roomsId;
-    private int roomNumber;
+    private Integer roomNumber;
     private String roomName;
     private String floor;
     private boolean active;

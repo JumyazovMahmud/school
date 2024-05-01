@@ -1,15 +1,14 @@
 package com.company.school.dto.request;
 
-import jakarta.persistence.Basic;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RequestSubjectDto {
 
     @NotBlank(message = "SubjectName cannot be null or empty")
@@ -20,5 +19,7 @@ public class RequestSubjectDto {
 
     @NotBlank(message = "Floor cannot be null")
     private String floor;
+
+    private boolean active;
 
 }

@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseClazzDto {
 
-    private Integer classId;
+    private Integer clazzId;
     private Integer teacherId;
     private Integer studentId;
     private Integer mentorId;
     private Integer roomId;
     private Boolean status;
-    private ResponseTeacherScheduleDto teacherSchedule;
+    private ResponseScheduleDto scheduleDto;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

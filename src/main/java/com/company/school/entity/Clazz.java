@@ -18,7 +18,7 @@ public class Clazz extends AbsEntity {
     @Id
     @Column(name = "class_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer classId;
+    private Integer clazzId;
     private Integer teacherId;
     private Integer studentId;
     private Integer roomId;

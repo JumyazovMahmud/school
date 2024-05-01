@@ -29,7 +29,7 @@ public class Schedule extends AbsEntity {
     private Integer teacherId;
 
 
-    @OneToMany(mappedBy = "classId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clazzId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Clazz> clazzList;
 
 //    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)

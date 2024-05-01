@@ -1,5 +1,6 @@
 package com.company.school.dto.response;
 
+import com.company.school.entity.Address;
 import com.company.school.entity.Student;
 import com.company.school.entity.enums.Gender;
 import com.company.school.entity.enums.Status;
@@ -22,7 +23,7 @@ public class ResponseStudentDto {
     private String password;
     private String phoneNumber;
     private String parentsPhoneNumber;
-    private String address;
+    private Address address;
     private int age;
     private LocalDate birthDate;
 

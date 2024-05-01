@@ -13,21 +13,19 @@ import java.util.List;
 public class ResponseTeacherDto {
 
 
-    private Integer id;
+    private Integer teacherId;
     private String firstname;
     private String lastname;
     private String email;
     private String password;
 
-    private ResponseAddressDto address;
-
     private String phoneNumber;
     private Boolean active;
 
-    private List<ResponseTeacherRolesDto> roles;
-    private ResponseAttendanceDto attendance;
+    private ResponseAddressDto address;
     private ResponseSubjectDto subject;
     private ResponseTeacherScheduleDto teacherSchedule;
+    private ResponseSchoolDto school;
 
 
     private Integer schoolId;
