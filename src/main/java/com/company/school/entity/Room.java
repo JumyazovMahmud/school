@@ -17,7 +17,7 @@ public class Room extends AbsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roomsId;
+    private Integer roomId;
     private int roomNumber;
     private String roomName;
     private String floor;

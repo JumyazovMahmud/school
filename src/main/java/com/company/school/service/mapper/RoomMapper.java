@@ -22,7 +22,7 @@ public class RoomMapper {
 
     public ResponseRoomDto toDto(Room room){
         return ResponseRoomDto.builder()
-                .roomsId(room.getRoomsId())
+                .roomsId(room.getRoomId())
                 .active(room.isActive())
                 .roomName(room.getRoomName())
                 .roomNumber(room.getRoomNumber())

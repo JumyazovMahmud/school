@@ -30,7 +30,7 @@ public class Clazz extends AbsEntity {
     @OneToMany(mappedBy = "studentId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Student> students;
 
-    @OneToMany(mappedBy = "roomsId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "roomId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Room> rooms;
 
     @ManyToOne
